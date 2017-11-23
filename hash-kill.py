@@ -37,10 +37,14 @@ import time
 import string
 import argparse
 import itertools
-import winsound
 import hashlib
-
-
+def sound():
+	try:
+		import winsound
+		winsound.Beep(1000,1000)
+	except:
+		pass
+	
 def hashkill(chrs, min_length, max_length, type_type, myhash):
 
     if min_length > max_length:
@@ -63,7 +67,7 @@ def hashkill(chrs, min_length, max_length, type_type, myhash):
                 print ('[*]Hash is : ' + chars)
                 print "[*]Time: %s seconds" % round((end - start), 2)
                 print "[*]Words tried:" + (str(count))
-                winsound.Beep(1000, 1000)
+                sound()
                 break
 
 
